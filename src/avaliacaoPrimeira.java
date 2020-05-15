@@ -6,9 +6,11 @@ public class avaliacaoPrimeira {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		int quantidade, atraso;
+		int quantidade, atraso, scoreCompras;
 		double ticketMedio, volumeCompras;
 		char formaPagamento;
+		
+		scoreCompras = 0;
 		
 		//Cabecalho
 		
@@ -36,13 +38,23 @@ public class avaliacaoPrimeira {
 		formaPagamento = sc.next().charAt(0);
 		
 		
+		//Score do volume de compras
 		
+		if ( volumeCompras == 0 ) {
+			scoreCompras = 0;
+		}
+		else if( volumeCompras < 3000.00 && quantidade <= 2) {
+			scoreCompras = 20;
+		}
+		else if( volumeCompras < 3000.00 && quantidade > 2) {
+			scoreCompras = 40;
+		}
+		else if( volumeCompras >= 3000.00) {
+			scoreCompras = 60;
+		}
 		
-		
-		
-		
-		
-		
+		System.out.println();
+		System.out.println("Score de volume de compras = " + scoreCompras + " pontos");
 		
 		
 		
