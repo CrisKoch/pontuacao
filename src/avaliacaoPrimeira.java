@@ -6,11 +6,13 @@ public class avaliacaoPrimeira {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		int quantidade, atraso, scoreCompras;
+		int quantidade, atraso, scoreCompras, scoreInadimplencia,scoreFormaPagamento;
 		double ticketMedio, volumeCompras;
 		char formaPagamento;
 		
 		scoreCompras = 0;
+		scoreInadimplencia = 0;
+		scoreFormaPagamento = 0;
 		
 		//Cabecalho
 		
@@ -56,6 +58,32 @@ public class avaliacaoPrimeira {
 		System.out.println();
 		System.out.println("Score de volume de compras = " + scoreCompras + " pontos");
 		
+		
+		//Score de inadimplencia e pagamento
+		
+		if (atraso > 1 || quantidade == 0) {
+			scoreInadimplencia = 0;
+		}
+		else if (quantidade > 0 && atraso == 1) {
+			scoreInadimplencia = 15;
+		}
+		else if (quantidade > 0 && atraso == 0 ) {
+			scoreInadimplencia = 30;
+		}
+		System.out.println();
+		System.out.println("Score de inadimplência = " + scoreInadimplencia + " pontos");
+		
+		
+		if (quantidade >= 1 && formaPagamento == 'd' || formaPagamento == 'D') {
+			scoreFormaPagamento = 5;
+		}
+		
+		else if ( quantidade >= 1 && formaPagamento == 'c' || formaPagamento == 'C' || formaPagamento == 'b' || formaPagamento == 'B') {
+			scoreFormaPagamento = 10;
+		}
+		
+		
+		System.out.println("Score de forma de pagamento = " + scoreFormaPagamento + " pontos");
 		
 		
 		sc.close();
