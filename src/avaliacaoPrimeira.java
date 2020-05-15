@@ -6,7 +6,7 @@ public class avaliacaoPrimeira {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		int quantidade, atraso, scoreCompras, scoreInadimplencia,scoreFormaPagamento;
+		int quantidade, atraso, scoreCompras, scoreInadimplencia,scoreFormaPagamento, scoreTotal;
 		double ticketMedio, volumeCompras;
 		char formaPagamento;
 		
@@ -86,6 +86,20 @@ public class avaliacaoPrimeira {
 		System.out.println("Score de forma de pagamento = " + scoreFormaPagamento + " pontos");
 		
 		
+		
+		//Classificacao final
+		
+		scoreTotal = scoreCompras + scoreInadimplencia + scoreFormaPagamento;
+		System.out.println();
+		if (scoreTotal >= 0 && scoreTotal <= 25) {
+			System.out.println("Classificação final = CLIENTE BRONZE");
+		}
+		else if (scoreTotal > 25 && scoreTotal <= 75 ) {
+			System.out.println("Classificação final = CLIENTE PRATA");
+		}
+		else if (scoreTotal > 75) {
+			System.out.println("Classificação final = CLIENTE OURO");
+		}
 		sc.close();
 	}
 
