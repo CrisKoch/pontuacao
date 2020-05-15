@@ -7,7 +7,7 @@ public class avaliacaoPrimeira {
 		Scanner sc = new Scanner(System.in);
 		
 		int quantidade;
-		double ticketMedio;
+		double ticketMedio, volumeCompras;
 		
 		
 		//Cabecalho
@@ -25,7 +25,7 @@ public class avaliacaoPrimeira {
 		ticketMedio = sc.nextDouble();
 		
 		
-		
+		volumeCompras = quantidade * ticketMedio;
 		
 		
 		
