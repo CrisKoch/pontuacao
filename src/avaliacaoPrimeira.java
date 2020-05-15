@@ -6,9 +6,9 @@ public class avaliacaoPrimeira {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		int quantidade;
+		int quantidade, atraso;
 		double ticketMedio, volumeCompras;
-		
+		char formaPagamento;
 		
 		//Cabecalho
 		
@@ -27,6 +27,13 @@ public class avaliacaoPrimeira {
 		
 		volumeCompras = quantidade * ticketMedio;
 		
+		//Leitura dos outros dados
+		
+		System.out.println();
+		System.out.print("Quantas vezes o cliente atrasou o pagamento? ");
+		atraso = sc.nextInt();
+		System.out.print("A maioria das compras foi em dinheiro, cartão, ou boleto (D/C/B)? ");
+		formaPagamento = sc.next().charAt(0);
 		
 		
 		
